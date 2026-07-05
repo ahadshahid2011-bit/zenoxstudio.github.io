@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --zenox-teal: #00B4D8;
+    --zenox-orange: #FF6B35;
+    --zenox-black: #0A0A0A;
+    --zenox-white: #FFFFFF;
+}
+
+body {
+    background-color: var(--zenox-black);
+    color: var(--zenox-white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    padding: 20px 50px;
+    border-bottom: 2px solid var(--zenox-teal);
+    position: sticky;
+    top: 0;
+    background-color: var(--zenox-black);
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-section img {
+    height: 50px;
+}
+
+.logo-section h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo-section h1 span {
+    color: var(--zenox-teal);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: var(--zenox-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--zenox-teal);
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero-content h2 {
+    font-size: 55px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, var(--zenox-teal), var(--zenox-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,.btn-secondary,.whatsapp-btn {
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary,.whatsapp-btn {
+    background-color: var(--zenox-teal);
+    color: var(--zenox-black);
+}
+
+.btn-primary:hover,.whatsapp-btn:hover {
+    background-color: var(--zenox-orange);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 2px solid var(--zenox-teal);
+    color: var(--zenox-teal);
+}
+
+.btn-secondary:hover {
+    background-color: var(--zenox-teal);
+    color: var(--zenox-black);
+}
+
+.services-section {
+    padding: 80px 20px;
+    background-color: var(--zenox-black);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: var(--zenox-teal);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #aaa;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-box {
+    background-color: #111;
+    border: 2px solid #222;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.service-box:hover {
+    border-color: var(--zenox-teal);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+}
+
+.service-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.service-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--zenox-white);
+}
+
+.service-box p {
+    font-size: 16px;
+    color: var(--zenox-orange);
+    font-weight: bold;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 180, 216, 0.6) 0%, rgba(255, 107, 53, 0.4) 50%, transparent 70%);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.footer {
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 2px solid var(--zenox-teal);
+    margin-top: 80px;
+}
+
+.footer h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--zenox-teal);
+}
+
+.footer p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.whatsapp-btn {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  .hero-content h2 {
+        font-size: 35px;
+    }
+  .navbar {
+        padding: 15px 20px;
+    }
+  .nav-menu {
+        gap: 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+        grid-template-columns: 1fr;
+    }
+  .hero-content h2 {
+        font-size: 28px;
+    }
+}.portfolio-section, .pricing-section {
+    padding: 80px 20px;
+    background-color: #0A0A0A;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.portfolio-box {
+    background-color: #111;
+    border: 2px solid #222;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.portfolio-box:hover {
+    border-color: var(--zenox-orange);
+    transform: translateY(-10px);
+}
+
+.portfolio-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.portfolio-box h3 {
+    margin-bottom: 15px;
+    color: var(--zenox-white);
+}
+
+.portfolio-box a {
+    color: var(--zenox-teal);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.price-box {
+    background-color: #111;
+    border: 2px solid #222;
+    border-radius: 12px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.price-box.featured {
+    border-color: var(--zenox-teal);
+    transform: scale(1.05);
+}
+
+.price-box h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--zenox-teal);
+}
+
+.price-box h4 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: var(--zenox-orange);
+}
+
+.price-box ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.price-box ul li {
+    padding: 10px 0;
+    color: #ccc;
+    border-bottom: 1px solid #222;
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid, .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+  .price-box.featured {
+        transform: scale(1);
+    }
+}
